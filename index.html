@@ -149,7 +149,23 @@
       <p>Complete parameter tables for the decoupled (Case A) and coupled (Case B) runs</p>
     </div>
   </a>
+  <a class="pdf-card" href="project-outline.pdf" target="_blank" id="card-project-outline">
+    <span class="pdf-icon">📄</span>
+    <div>
+      <h3>Project Outline</h3>
+      <p>Overview of the research project and objectives</p>
+    </div>
+  </a>
 </div>
+
+<script>
+  // Hide PDF cards whose file isn't available yet
+  document.querySelectorAll('.pdf-card').forEach(card => {
+    fetch(card.href, { method: 'HEAD' }).then(r => {
+      if (!r.ok) card.style.display = 'none';
+    }).catch(() => card.style.display = 'none');
+  });
+</script>
 
 <h2>Animations</h2>
 
