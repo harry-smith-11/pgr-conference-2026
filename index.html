@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phase-Field Fracture — Supplementary Material</title>
+  <style>
+    :root {
+      --purple: #660099;
+      --lightpurple: #f5f0fa;
+      --gold: #c9a84c;
+      --grey: #555;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff;
+      color: #222;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    header {
+      background: var(--purple);
+      color: white;
+      margin: 0 -1.5rem 2.5rem;
+      padding: 2rem 2rem 1.5rem;
+    }
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+    header p {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+    header .conf {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      padding-top: 0.6rem;
+    }
+    h2 {
+      color: var(--purple);
+      font-size: 1.05rem;
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--lightpurple);
+    }
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .pdf-card {
+      background: var(--lightpurple);
+      border: 1.5px solid var(--purple);
+      border-radius: 6px;
+      padding: 1.1rem 1.2rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      transition: background 0.15s;
+    }
+    .pdf-card:hover { background: #ede5f5; }
+    .pdf-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .pdf-card h3 {
+      font-size: 0.95rem;
+      color: var(--purple);
+      margin-bottom: 0.2rem;
+    }
+    .pdf-card p {
+      font-size: 0.78rem;
+      color: var(--grey);
+    }
+    .gif-block {
+      margin-bottom: 2rem;
+    }
+    .gif-block h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .gif-block p {
+      font-size: 0.82rem;
+      color: var(--grey);
+      margin-bottom: 0.7rem;
+    }
+    .gif-block img {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      display: block;
+    }
+    .placeholder {
+      width: 100%;
+      height: 220px;
+      background: var(--lightpurple);
+      border: 1.5px dashed var(--purple);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--purple);
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #eee;
+      font-size: 0.78rem;
+      color: var(--grey);
+    }
+    footer a { color: var(--purple); }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Phase-Field Fracture for Microstructure-Resolved Crystal Deformation Under Tensile Loading</h1>
+  <p>Harry Smith &nbsp;·&nbsp; Dr. Aleksey Yerokhin &nbsp;·&nbsp; Dr. Tom Flint</p>
+  <p>Henry Royce Institute &nbsp;|&nbsp; Department of Materials, University of Manchester</p>
+  <p class="conf">PGR Conference &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Supplementary material</p>
+</header>
+
+<h2>Documents</h2>
+<div class="pdf-grid">
+  <a class="pdf-card" href="nomenclature.pdf" target="_blank">
+    <span class="pdf-icon">📄</span>
+    <div>
+      <h3>Nomenclature</h3>
+      <p>Full symbol table: fields, crystal plasticity, phase-field fracture</p>
+    </div>
+  </a>
+  <a class="pdf-card" href="input-parameters.pdf" target="_blank">
+    <span class="pdf-icon">📄</span>
+    <div>
+      <h3>Input Parameters</h3>
+      <p>Complete parameter tables for the decoupled (Case A) and coupled (Case B) runs</p>
+    </div>
+  </a>
+</div>
+
+<h2>Animations</h2>
+
+<div class="gif-block">
+  <h3>Decoupled run — crack phase field evolution</h3>
+  <p>φ<sub>cr</sub> advancing along the grain boundary over the full Stage 2 duration (~15 ms). Crack nucleates at the seed notch and propagates ~95 μm along the GB.</p>
+  <img src="stage2_phiCrack.gif" alt="Decoupled crack phase field evolution" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="placeholder" style="display:none">stage2_phiCrack.gif — coming soon</div>
+</div>
+
+<div class="gif-block">
+  <h3>Coupled run — crack phase field evolution</h3>
+  <p>φ<sub>cr</sub> field from the fully coupled run up to the crash at t ≈ 1.75 μs, showing crack nucleation and early GB propagation before solver failure.</p>
+  <img src="coupled_phiCrack.gif" alt="Coupled crack phase field evolution" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="placeholder" style="display:none">coupled_phiCrack.gif — coming soon</div>
+</div>
+
+<div class="gif-block">
+  <h3>Coupled run — elastic vs. interfacial energy fields</h3>
+  <p>W<sub>el</sub> and W<sub>int</sub> evolving side by side. W<sub>el</sub> peaks anomalously inside void cells (no plasticity → full elastic strain); W<sub>int</sub> correctly localises at the GB and crack front.</p>
+  <img src="coupled_energy.gif" alt="Energy field evolution" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+  <div class="placeholder" style="display:none">coupled_energy.gif — coming soon</div>
+</div>
+
+<footer>
+  <p>Harry Smith &nbsp;·&nbsp; <a href="mailto:harry.smith-11@postgrad.manchester.ac.uk">harry.smith-11@postgrad.manchester.ac.uk</a></p>
+  <p>Henry Royce Institute, Department of Materials, University of Manchester</p>
+</footer>
+
+</body>
+</html>
